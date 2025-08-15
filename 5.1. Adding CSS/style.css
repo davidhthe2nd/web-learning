@@ -1,0 +1,39 @@
+<!-- Style by type of content >
+h1{
+    color: green;
+}
+
+<!-- Style by class >
+.color-test {
+    color: red;
+}   
+
+<!-- Style by ID >
+#unique-style {
+    color: purple;
+}
+
+<!-- Style by element >
+p {
+    color: orange;
+}
+
+<!-- Style by attribute >
+a[href] {
+    color: blue;
+}
+
+<!-- Style by pseudo-class >
+a:hover {
+    color: darkblue;
+}
+
+<!-- Style by pseudo-element >
+p::first-letter {
+    font-size: 2em;
+    color: darkorange;
+}
+
+p[draggable="true"] {
+    color: darkgreen;
+}   

@@ -8,63 +8,87 @@
   <style>
     /* 
     Write your CSS here 
-    Gap Colour: #000
+    Line Colour: #000
     White: #F0F1EC
     Red: #E72F24
     Black: #232629
     Blue: #004592
     Yellow: #F9D01E
-
-    For dimensions, see dimensions.png image.
-    HINT: Remember you can't change the properties of grid lines.
-    But grid lines are transparent!
     */
-    .white-square {
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      height: 748px;
+      width: 748px;
+      display: grid;
+      background-color: #000;
+      grid-template-columns: 320px 198px 153px 50px;
+      grid-template-rows: 414px 130px 155px 22px;
+      gap: 9px;
+    }
+
+    .item {
       background-color: #F0F1EC;
     }
 
-    .red-square {
+    .red {
       background-color: #E72F24;
-      height: 414px;
-      width: 320px;
     }
 
-    .blue-square {
+    .white1 {
+      grid-column: span 3;
+    }
+
+    .white2 {
+      grid-row: span 2;
+    }
+
+    .white3 {
+      grid-area: 2 / 2 / 4 /4
+    }
+
+    .blue {
       background-color: #004592;
       border-bottom: 10px solid #000;
-      height: 130px;
-      width: 50px;
     }
 
-    .yellow-square {
+    .white4 {
+      grid-row: span 2;
+    }
+
+    .yellow {
       background-color: #F9D01E;
-      height: 20px;
-      width: 198px;
     }
-    .black-square {
+
+    .black {
       background-color: #232629;
-      height: 20px;
-      width: 153px;
     }
-
-
   </style>
 </head>
 
 <body>
   <!-- Write your HTML here -->
-  <div class="red-square"></div>
-  <div class="white-square white1"></div>
 
-  <div class="white-square white2"></div>
-  <div class="white-square white3"></div>
-  <div class="blue-square"></div>
+  <div class="container">
+    <div class="item red"></div>
+    <div class="item white1"></div>
+    <div class="item white2"></div>
+    <div class="item white3"></div>
 
-  <div class="white-square white4"></div>
-  <div class="yellow-square"></div>
-  <div class="black-square"></div>
-  <div class="white-square white5"></div>
-  
+    <div class="item blue"></div>
+    <div class="item white4"></div>
+
+    <div class="item"></div>
+    <div class="item yellow"></div>
+    <div class="item black"></div>
+  </div>
 </body>
 
 </html>

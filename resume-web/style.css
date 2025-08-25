@@ -1,0 +1,48 @@
+.body{
+    background-color: #DDF4E7;
+}
+
+.btn-primary {
+    background-color: #124170;
+    border-color: #124170;
+}
+
+.nav-link {
+    color: #124170  ;
+}
+
+#header-container #nav-main .nav-link.active {
+  background-color: #124170; /* your custom background */
+  color: white;              /* text color */
+}
+
+.b-example-divider {
+  height: 0.5rem;
+  background: #26667F;
+}
+
+.feature-icon-small{
+  background-color: #26667F !important;
+}
+
+#university {
+    font-size: 1.2em;
+}
+
+#hobby-text{
+  color: #26667F;
+  background-color: #DDF4E7;
+  align-items: center ;
+}
+
+.navbar{
+  background-color: #DDF4E7 !important;
+}
+
+.nav-item{
+  font-style: bold;
+}
+
+#header-container .nav-link {
+  font-weight: 600;  /* semi-bold */
+}

@@ -1,0 +1,19 @@
+$kind: http-example
+request:
+  url: http://localhost:3000/all
+  method: DELETE
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    X-Powered-By: Express
+    Content-Type: text/plain; charset=utf-8
+    Content-Length: "2"
+    ETag: W/"2-nOO9QiTIwXgNtWtBJezz8kv3SLc"
+    Date: Thu, 27 Jul 2023 11:43:07 GMT
+    Connection: keep-alive
+    Keep-Alive: timeout=5
+  body:
+    type: text
+    content: OK
+order: 1000

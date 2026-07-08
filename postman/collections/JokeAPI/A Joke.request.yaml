@@ -1,0 +1,11 @@
+$kind: http-request
+description: |-
+  Delete a joke rfom the bank of jokes based on the path parameter provided for the joke `id`.
+
+  Will return an error if no jokes match the provided `id`.
+url: /jokes/:id
+method: DELETE
+pathVariables:
+  id: ""
+examples: ./.resources/A Joke.resources/examples
+order: 7000

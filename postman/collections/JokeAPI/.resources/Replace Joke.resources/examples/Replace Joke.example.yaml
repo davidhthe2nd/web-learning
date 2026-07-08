@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: http://localhost:3000/jokes/:id
+  method: PUT
+  pathVariables:
+    id: "2"
+  body:
+    type: urlencoded
+    content:
+      text: Why did the scarecrow win a prize? Because he was outstanding in his field.
+      type: Science
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    X-Powered-By: Express
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "118"
+    ETag: W/"76-mng0cjGno2lwfK8NTHNjTKx+Eo4"
+    Date: Thu, 27 Jul 2023 11:34:35 GMT
+    Connection: keep-alive
+    Keep-Alive: timeout=5
+  body:
+    type: json
+    content: |-
+      {
+          "id": 2,
+          "jokeText": "Why did the scarecrow win a prize? Because he was outstanding in his field.",
+          "jokeType": "Science"
+      }
+order: 1000

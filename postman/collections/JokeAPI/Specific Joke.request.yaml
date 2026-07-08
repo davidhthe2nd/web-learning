@@ -1,0 +1,9 @@
+$kind: http-request
+description: |-
+  Responds with a single joke with the requested joke id.
+
+  Provide the joke id as a path parameter.
+url: ""
+method: GET
+examples: ./.resources/Specific Joke.resources/examples
+order: 2000

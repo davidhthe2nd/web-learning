@@ -1,0 +1,9 @@
+$kind: http-request
+description: |-
+  Filters all the jokes by their joke type.
+
+  Provide a query parameter for `type` and if the type exists, then you should get back all the jokes that match that type.
+url: ""
+method: GET
+examples: ./.resources/Filtered Joke By Type.resources/examples
+order: 3000

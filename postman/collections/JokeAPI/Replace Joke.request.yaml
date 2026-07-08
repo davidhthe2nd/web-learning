@@ -1,0 +1,11 @@
+$kind: http-request
+description: |-
+  Completely replace a joke based on the path parameter id specified.
+
+  Provide the replacement values for the `text` and `type`.
+url: /jokes/:id
+method: PUT
+pathVariables:
+  id: ""
+examples: ./.resources/Replace Joke.resources/examples
+order: 5000

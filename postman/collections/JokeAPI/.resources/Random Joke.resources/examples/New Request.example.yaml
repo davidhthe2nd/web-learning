@@ -1,0 +1,24 @@
+$kind: http-example
+request:
+  url: http://localhost:3000/random/
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    X-Powered-By: Express
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "113"
+    ETag: W/"71-VNBOQi/Xbnr7wXzgrcawCdOzIa0"
+    Date: Thu, 27 Jul 2023 10:44:43 GMT
+    Connection: keep-alive
+    Keep-Alive: timeout=5
+  body:
+    type: json
+    content: |-
+      {
+          "id": 43,
+          "jokeText": "What did one ocean say to the other ocean? Nothing, they just waved.",
+          "jokeType": "Wordplay"
+      }
+order: 1000

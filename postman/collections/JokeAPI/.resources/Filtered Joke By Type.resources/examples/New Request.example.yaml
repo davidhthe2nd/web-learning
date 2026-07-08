@@ -1,0 +1,108 @@
+$kind: http-example
+request:
+  url: http://localhost:3000/filter?type=Puns
+  method: GET
+  queryParams:
+    type: Puns
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    X-Powered-By: Express
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "2028"
+    ETag: W/"7ec-yn5L0jBzbhpr0AjIJLwzjXXXPJ4"
+    Date: Thu, 27 Jul 2023 10:57:19 GMT
+    Connection: keep-alive
+    Keep-Alive: timeout=5
+  body:
+    type: json
+    content: |-
+      [
+          {
+              "id": 2,
+              "jokeText": "Why did the scarecrow win an award? Because he was outstanding in his field.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 3,
+              "jokeText": "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 7,
+              "jokeText": "Why don't some couples go to the gym? Because some relationships don't work out.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 16,
+              "jokeText": "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 20,
+              "jokeText": "Why don't some couples go to the gym? Because some relationships don't work out.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 29,
+              "jokeText": "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 33,
+              "jokeText": "Why don't some couples go to the gym? Because some relationships don't work out.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 42,
+              "jokeText": "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 46,
+              "jokeText": "Why don't some couples go to the gym? Because some relationships don't work out.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 55,
+              "jokeText": "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 59,
+              "jokeText": "Why don't some couples go to the gym? Because some relationships don't work out.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 68,
+              "jokeText": "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 72,
+              "jokeText": "Why don't some couples go to the gym? Because some relationships don't work out.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 81,
+              "jokeText": "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 85,
+              "jokeText": "Why don't some couples go to the gym? Because some relationships don't work out.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 94,
+              "jokeText": "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+              "jokeType": "Puns"
+          },
+          {
+              "id": 98,
+              "jokeText": "Why don't some couples go to the gym? Because some relationships don't work out.",
+              "jokeType": "Puns"
+          }
+      ]
+order: 1000

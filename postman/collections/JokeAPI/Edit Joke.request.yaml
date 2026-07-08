@@ -1,0 +1,11 @@
+$kind: http-request
+description: |-
+  Edit a joke for the id that is specified in the path parameter.
+
+  Provide optional values for either the `text` or the `type`.
+url: /jokes/:id
+method: PATCH
+pathVariables:
+  id: ""
+examples: ./.resources/Edit Joke.resources/examples
+order: 6000

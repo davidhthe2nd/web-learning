@@ -1,0 +1,29 @@
+$kind: http-example
+request:
+  url: http://localhost:3000/jokes
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      text: Iamonthemoonandthereisnowheretogetabeer. Thereisnospacebar.
+      type: Science
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    X-Powered-By: Express
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "104"
+    ETag: W/"68-tXEColDukjT9EWupiNWhhvIkYok"
+    Date: Thu, 27 Jul 2023 11:34:43 GMT
+    Connection: keep-alive
+    Keep-Alive: timeout=5
+  body:
+    type: json
+    content: |-
+      {
+          "id": 101,
+          "jokeText": "Iamonthemoonandthereisnowheretogetabeer. Thereisnospacebar.",
+          "jokeType": "Science"
+      }
+order: 1000

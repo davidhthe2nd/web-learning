@@ -24,8 +24,6 @@ app.get("/", async(req, res) => {
     }
 });
 
-
-
 // 5. Use axios to get a random secret and pass it to index.ejs to display the
 // secret and the username of the secret.
 

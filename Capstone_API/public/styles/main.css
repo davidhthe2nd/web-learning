@@ -1,0 +1,202 @@
+/* ==========================================================================
+   Lisper — random anime quote page
+   Look & feel: manga panel / speech bubble, halftone paper, bold ink lines
+   ========================================================================== */
+
+:root {
+  --ink: #16171d;
+  --paper: #fdf8ee;
+  --accent: #ff3d54;      /* shonen-red, used sparingly */
+  --accent-ink: #7a0d1c;  /* pressed/shadow version of accent */
+  --night: #171826;       /* background */
+  --night-2: #23253a;
+  --dot: rgba(253, 248, 238, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 6vh 6vw;
+  color: var(--paper);
+  background-color: var(--night);
+  background-image:
+    radial-gradient(var(--dot) 1.6px, transparent 1.6px),
+    linear-gradient(160deg, var(--night) 0%, var(--night-2) 100%);
+  background-size: 16px 16px, 100% 100%;
+  font-family: "Gloria Hallelujah", cursive;
+  overflow-x: hidden;
+}
+
+/* -------------------------------------------------------------------- */
+/* Headline                                                              */
+/* -------------------------------------------------------------------- */
+
+h1 {
+  margin: 0;
+  max-width: 20ch;
+  text-align: center;
+  font-family: "Titan One", cursive;
+  font-size: clamp(1.6rem, 4vw + 0.5rem, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+  color: var(--paper);
+  -webkit-text-stroke: 1.5px var(--ink);
+  text-shadow:
+    3px 3px 0 var(--accent-ink),
+    3px 3px 0 var(--ink);
+}
+
+/* -------------------------------------------------------------------- */
+/* Quote card — styled like a speech bubble torn from a manga panel      */
+/* -------------------------------------------------------------------- */
+
+.card {
+  position: relative;
+  max-width: 620px;
+  width: 100%;
+  padding: 2.75rem 2.5rem 2.25rem;
+  background: var(--paper);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 26px 26px 30px 8px;
+  box-shadow: 10px 10px 0 var(--ink);
+  transform: rotate(-1deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: 12px 14px 0 var(--ink);
+}
+
+/* speech-bubble tail pointing down toward the anime source line */
+.card::after {
+  content: "";
+  position: absolute;
+  left: 54px;
+  bottom: -26px;
+  width: 40px;
+  height: 40px;
+  background: var(--paper);
+  border-right: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  border-radius: 0 0 4px 0;
+  transform: rotate(45deg) skew(6deg, 6deg);
+}
+
+/* small "op-art" burst marking the quote as the star of the page */
+.card::before {
+  content: "❝";
+  position: absolute;
+  top: -22px;
+  left: -18px;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Titan One", cursive;
+  font-size: 1.6rem;
+  color: var(--paper);
+  background: var(--accent);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.card p {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.1vw + 0.85rem, 1.35rem);
+  line-height: 1.6;
+}
+
+/* the quote text itself (first line of content inside <p>) */
+.card p {
+  font-style: normal;
+}
+
+/* character name — rendered inline right after the quote text; give it
+   its own visual weight so it reads as a credit line, not more dialogue */
+.card p::first-line {
+  font-size: 1.02em;
+}
+
+/* -------------------------------------------------------------------- */
+/* Anime source — small tag under the bubble's tail                      */
+/* -------------------------------------------------------------------- */
+
+.user {
+  margin: 0.5rem 0 0 54px;
+  padding: 0.35rem 0.9rem;
+  font-family: "Titan One", cursive;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--night);
+  background: var(--accent);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--ink);
+  align-self: flex-start;
+}
+
+.user::before {
+  content: "from ";
+  font-family: "Gloria Hallelujah", cursive;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.95em;
+  opacity: 0.75;
+}
+
+/* -------------------------------------------------------------------- */
+/* Responsive tweaks                                                     */
+/* -------------------------------------------------------------------- */
+
+@media (max-width: 480px) {
+  .card {
+    padding: 2.25rem 1.5rem 1.9rem;
+    border-radius: 20px 20px 24px 6px;
+    transform: rotate(0deg);
+  }
+
+  .card::before {
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
+    left: -14px;
+    top: -18px;
+  }
+
+  .user {
+    margin-left: 20px;
+  }
+}
+
+/* -------------------------------------------------------------------- */
+/* Accessibility                                                         */
+/* -------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}

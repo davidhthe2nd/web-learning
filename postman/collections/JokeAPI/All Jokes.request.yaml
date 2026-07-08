@@ -1,0 +1,13 @@
+$kind: http-request
+description: |-
+  Delete all jokes in the bank.
+
+  DANGER.
+
+  Authentication:
+
+  Requires an API Key to perform this action.
+url: /jokes/all
+method: DELETE
+examples: ./.resources/All Jokes.resources/examples
+order: 8000

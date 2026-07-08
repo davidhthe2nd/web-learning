@@ -1,0 +1,6 @@
+$kind: http-request
+description: Get a random joke from the Joke API
+url: http://localhost:3000/random/
+method: GET
+examples: ./.resources/Random Joke.resources/examples
+order: 1000

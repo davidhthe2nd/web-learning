@@ -21,10 +21,18 @@ db.connect();
 
 //Display books (first version, as simple list)
 app.get('/', async (req, res) => {
-   try {
-    const result = await db.query("SELECT * FROM books ORDER BY id ASC");
+  const sortOptions = {
+    rating: 'rating DESC',
+    recent: 'date_read DESC',
+    title: 'title ASC'
+  };
+
+  const sortBy = sortOptions[req.query.sort] || 'id ASC'; // default if missing/invalid
+
+  try {
+    const result = await db.query(`SELECT * FROM books ORDER BY ${sortBy}`);
     const books = result.rows;
-    res.render('index', { books });
+    res.render('index', { books, currentSort: req.query.sort || 'default' });
   } catch (err) {
     console.error(err);
     res.status(500).send("Something went wrong loading your books.");

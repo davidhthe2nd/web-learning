@@ -8,7 +8,7 @@
 </head>
 <body>
     <%- include('partials/header') %>
-    <h1>Book Notes</h1>
+    <a href="/books/new" class="btn-add">+ Add a book</a>
     <ul>
         <% books.forEach((book) => { %>
             <li>
@@ -23,5 +23,6 @@
         <% }); %>
     </ul>
     <%- include('partials/footer') %>
+    <a href="/books/new" class="btn-add">+ Add a book</a>
 </body>
 </html>

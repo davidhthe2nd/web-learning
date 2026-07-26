@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="/styles/main.css" rel="stylesheet" type="text/css">
+  <title>Search Results</title>
+</head>
+<body>
+  <h1>Results for "<%= query %>"</h1>
+
+  <% if (results.length === 0) { %>
+    <p>No matches found. <a href="/books/new">Try another search</a>.</p>
+  <% } else { %>
+
+    <div class="results-grid">
+      <% results.forEach((book) => { %>
+        <div class="search-card">
+          <% if (book.coverUrl) { %>
+            <img src="<%= book.coverUrl %>" alt="<%= book.title %> cover">
+          <% } else { %>
+            <div class="no-cover">No cover</div>
+          <% } %>
+
+          <h3><%= book.title %></h3>
+          <p><%= book.author %> — <%= book.year %></p>
+
+          <form action="/books" method="POST">
+            <!-- Hidden fields carry the confirmed match data through to POST /books -->
+            <input type="hidden" name="title" value="<%= book.title %>">
+            <input type="hidden" name="author" value="<%= book.author %>">
+            <input type="hidden" name="first_publish_year" value="<%= book.year %>">
+            <input type="hidden" name="cover_url" value="<%= book.coverUrl %>">
+
+            <!-- User-entered fields, only shown once they've picked this card -->
+            <label for="rating-<%= book.title %>">Rating (1-5):</label>
+            <input type="number" id="rating-<%= book.title %>" name="rating" min="1" max="5" required>
+
+            <label for="date-<%= book.title %>">Date read:</label>
+            <input type="date" id="date-<%= book.title %>" name="date_read" required>
+
+            <label for="notes-<%= book.title %>">Notes:</label>
+            <textarea id="notes-<%= book.title %>" name="notes" rows="3"></textarea>
+
+            <button type="submit">Add this book</button>
+          </form>
+        </div>
+      <% }) %>
+    </div>
+
+  <% } %>
+
+  <p><a href="/books/new">← New search</a></p>
+</body>
+</html>

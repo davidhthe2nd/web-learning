@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles/main.css" rel="stylesheet" type="text/css">
+    <title>Book Notes Diary</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <h1>Book Notes</h1>
+    <ul>
+        <% books.forEach((book) => { %>
+            <li>
+                <h2><%= book.title %></h2>
+                <p>Author: <%= book.author %></p>
+                <p>First Published Year: <%= book.first_publish_year %></p>
+                <p>Cover URL: <%= book.cover_url %></p>
+                <p>Rating: <%= book.rating %></p>
+                <p>Date Read: <%= book.date_read.toLocaleDateString() %></p>
+                <p>Notes: <%= book.notes %></p>
+            </li>
+        <% }); %>
+    </ul>
+    <%- include('partials/footer') %>
+</body>
+</html>

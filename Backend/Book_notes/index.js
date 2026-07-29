@@ -81,6 +81,14 @@ app.get('/books/search', async (req, res) => {
 app.post('/books', async (req, res) => {
   const { title, author, first_publish_year, cover_url, rating, date_read, notes } = req.body;
 
+  if (!title || !rating || !date_read) {
+    return res.status(400).send("Title, rating, and date read are required.");
+  }
+
+  if (rating < 1 || rating > 5) {
+    return res.status(400).send("Rating must be between 1 and 5.");
+  }
+
   try {
     await db.query(
       `INSERT INTO books (title, author, first_publish_year, cover_url, rating, date_read, notes)
@@ -134,12 +142,28 @@ app.post('/books/:id/delete', async (req, res) => {
   const { id } = req.params;
 
   try {
-    await db.query("DELETE FROM books WHERE id = $1", [id]);
+    const result = await db.query("DELETE FROM books WHERE id = $1", [id]);
+
+    if (result.rowCount === 0) {
+      return res.status(404).send("Book not found.");
+    }
+
     res.redirect('/');
   } catch (err) {
     console.error(err);
     res.status(500).send("Something went wrong deleting the book.");
   }
+});
+
+// 404 handler — catches any URL that doesn't match a route above
+app.use((req, res) => {
+  res.status(404).send("Page not found.");
+});
+
+// Catch-all error handler — safety net for anything not caught locally
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).send("Something went wrong.");
 });
 
 app.listen(port, () => {

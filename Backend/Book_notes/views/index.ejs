@@ -10,44 +10,24 @@
 
 <body>
     <%- include('partials/header') %>
-        <a href="/books/new" class="btn-add">+ Add a book</a>
-        <ul>
-            <% books.forEach((book)=> { %>
-                <div class="sort-links">
-                    Sort by:
-                    <a href="/?sort=rating">Rating</a> |
-                    <a href="/?sort=recent">Recently read</a> |
-                    <a href="/?sort=title">Title</a> |
-                    <a href="/">Default</a>
-                </div>
-                <li>
-                    <h2>
-                        <%= book.title %>
-                    </h2>
-                    <p>Book ID: <%= book.id %>
-                    </p>
-                    <p>Author: <%= book.author %>
-                    </p>
-                    <p>First Published Year: <%= book.first_publish_year %>
-                    </p>
-                    <p>Cover URL: <%= book.cover_url %>
-                    </p>
-                    <p>Rating: <%= book.rating %>
-                    </p>
-                    <p>Date Read: <%= book.date_read.toLocaleDateString() %>
-                    </p>
-                    <p>Notes: <%= book.notes %>
-                    </p>
-                    <a href="/books/<%= book.id %>/edit" class="btn-add">+ Edit book</a>
-                    <form action="/books/<%= book.id %>/delete" method="POST" style="display: inline;">
-                        <button type="submit" class="btn-add"
-                            onclick="return confirm('Are you sure you want to delete this book?')">Delete book</button>
-                    </form>
-                </li>
-                <% }); %>
-        </ul>
-        <a href="/books/new" class="btn-add">+ Add a book</a>
-        <%- include('partials/footer') %>
+    <a href="/books/new" class="btn btn--primary">+ Add a book</a>
+
+    <div class="sort-links">
+      Sort by:
+      <a href="/?sort=rating">Rating</a> |
+      <a href="/?sort=recent">Recently read</a> |
+      <a href="/?sort=title">Title</a> |
+      <a href="/">Default</a>
+    </div>
+
+    <ul class="book-grid">
+        <% books.forEach((book) => { %>
+            <%- include('partials/book-card', { book }) %>
+        <% }); %>
+    </ul>
+
+    <a href="/books/new" class="btn btn--primary">+ Add a book</a>
+    <%- include('partials/footer') %>
 </body>
 
 </html>

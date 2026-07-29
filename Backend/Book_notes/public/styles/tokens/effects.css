@@ -1,0 +1,8 @@
+:root{
+--shadow-soft:0 2px 6px rgba(0,0,0,0.09);
+--shadow-medium:0 4px 12px rgba(0,0,0,0.18);
+--shadow-card-hover:0 12px 30px rgba(0,0,0,0.08);
+--shadow-image:0 10px 25px rgba(0,0,0,0.08);
+--transition-fast:0.2s ease; /* @kind other */
+--transition-shadow:0.25s ease; /* @kind other */
+}

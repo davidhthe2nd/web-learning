@@ -7,7 +7,9 @@
     <title>Book Notes Diary</title>
 </head>
 <body>
-    <h1>Edit "<%= book.title %>"</h1>
+  <%- include('header') %>  
+  <div class="form-page">
+  <h1>Edit "<%= book.title %>"</h1>
 
   <form action="/books/<%= book.id %>" method="POST">
     <!-- Title/author/cover came from Open Library and aren't editable here -->
@@ -21,14 +23,16 @@
 
     <label for="date_read">Date read:</label>
     <input type="date" id="date_read" name="date_read"
-           value="<%= book.date_read.toISOString().split('T')[0] %>" required>
+           value="<%= book.date_read ? book.date_read.toISOString().split('T')[0] : '' %>">
 
     <label for="notes">Notes:</label>
     <textarea id="notes" name="notes" rows="4"><%= book.notes %></textarea>
 
-    <button type="submit">Save changes</button>
+    <button type="submit" class="btn btn--primary">Save changes</button>
   </form>
 
   <a href="/">← Back to all books</a>
+  </div>
+  <%- include('footer') %>
 </body>
 </html>

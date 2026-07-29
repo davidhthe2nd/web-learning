@@ -7,6 +7,26 @@
     <title>Book Notes Diary</title>
 </head>
 <body>
-    
+    <ul class="book-card">
+
+
+  <div class="book-card__body">
+    <h2 class="book-card__title"><%= book.title %></h2>
+    <% if (book.cover_url) { %>
+    <img src="<%= book.cover_url %>" alt="<%= book.title %> cover" class="book-card__cover">
+    <% } %>
+    <p class="book-card__meta"><%= book.author %> · <%= book.first_publish_year %></p>
+    <p class="book-card__rating">Rating: <%= book.rating %>/5</p>
+    <p class="book-card__date">Read: <%= book.date_read ? book.date_read.toLocaleDateString() : 'Not set' %></p>
+    <p class="book-card__notes"><%= book.notes %></p>
+
+    <div class="book-card__actions">
+      <a href="/books/<%= book.id %>/edit" class="btn btn--secondary">Edit entry</a>
+      <form action="/books/<%= book.id %>/delete" method="POST" style="display: inline;">
+        <button type="submit" class="btn btn--ghost" onclick="return confirm('Delete this book?')">Delete entry</button>
+      </form>
+    </div>
+  </div>
+</ul>
 </body>
 </html>

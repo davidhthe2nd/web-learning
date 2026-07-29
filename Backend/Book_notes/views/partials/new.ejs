@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/styles/main.css" rel="stylesheet" type="text/css">
+    <link href="styles/main.css" rel="stylesheet" type="text/css">
     <title>Book Notes Diary</title>
 </head>
 <body>
-    <h1>Add a Book</h1>
+  <%- include('header') %>
+  <div class="form-page">
+  <h1>Add a Book</h1>
 
   <form action="/books/search" method="GET">
     <label for="q">Book title:</label>
     <input type="text" id="q" name="q" placeholder="e.g. Atomic Habits" required>
-    <button type="submit">Search</button>
+    <button type="submit" class="btn btn--primary">Search</button>
   </form>
+  </div>
+  <%- include('footer') %>
 </body>
 </html>
